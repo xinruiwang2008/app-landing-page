@@ -1,0 +1,12 @@
+{
+  "redirects": [
+    { "source": "/privacy.ja.html", "destination": "/ja/privacy.html", "permanent": true },
+    { "source": "/terms.ja.html", "destination": "/ja/terms.html", "permanent": true },
+    { "source": "/privacy.ko.html", "destination": "/ko/privacy.html", "permanent": true },
+    { "source": "/terms.ko.html", "destination": "/ko/terms.html", "permanent": true },
+    { "source": "/privacy.zh-Hans.html", "destination": "/zh-Hans/privacy.html", "permanent": true },
+    { "source": "/terms.zh-Hans.html", "destination": "/zh-Hans/terms.html", "permanent": true },
+    { "source": "/privacy.zh-Hant.html", "destination": "/zh-Hant/privacy.html", "permanent": true },
+    { "source": "/terms.zh-Hant.html", "destination": "/zh-Hant/terms.html", "permanent": true }
+  ]
+}

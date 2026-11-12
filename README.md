@@ -15,11 +15,10 @@ Home-only composition and motion remain scoped to `.home` or `landing-*`
 classes. Support and legal pages use quiet, unboxed reading layouts without
 animation. Their HTML content is unchanged.
 
-The file structure intentionally stays buildless: public HTML, stylesheet,
-and search-engine files at the root; images, the font, and its license under
-`assets/`. Keep localized privacy and terms filenames at the root: these are
-public URLs used by language menus and external links, not duplicate assets
-to consolidate. No template engine or JavaScript loader is needed.
+The site stays buildless. English pages remain at the root; localized pages
+live in language folders. Shared styles, consent code, and assets are used
+across pages. Vercel redirects the former localized legal URLs to their new
+locations; retain these redirects for existing links.
 
 Product information is based on the public App Store listing:
 https://apps.apple.com/us/app/cadmus-grow-your-vocabulary/id6804102789
@@ -35,7 +34,11 @@ Illustrations use native disclosure controls to reveal meanings, with
 keyboard and touch support. CSS handles staggered entrance, hover, and
 progressive scroll-reveal animation. Reduce Motion disables these effects.
 On small phones, the illustration gallery supports horizontal swiping.
-No JavaScript or runtime dependencies are needed.
+The shared consent script controls the optional Google Analytics tag. Analytics
+loads only on homepages after consent.
+
+Run `node website/check-localization.js` to check language-menu order and
+consent links on the product pages.
 
 ## Search and sharing
 

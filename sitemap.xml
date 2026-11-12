@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.cadmusapp.com/</loc></url>
+  <url><loc>https://www.cadmusapp.com/faq.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/contact.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/ja/</loc></url>
+  <url><loc>https://www.cadmusapp.com/ja/faq.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/ja/support.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/ja/contact.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/zh-Hant/</loc></url>
+  <url><loc>https://www.cadmusapp.com/zh-Hant/faq.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/zh-Hant/support.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/zh-Hant/contact.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/zh-Hans/</loc></url>
+  <url><loc>https://www.cadmusapp.com/zh-Hans/faq.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/zh-Hans/support.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/zh-Hans/contact.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/ko/</loc></url>
+  <url><loc>https://www.cadmusapp.com/ko/faq.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/ko/support.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/ko/contact.html</loc></url>
   <url><loc>https://www.cadmusapp.com/support.html</loc></url>
   <url><loc>https://www.cadmusapp.com/privacy.html</loc></url>
-  <url><loc>https://www.cadmusapp.com/privacy.ja.html</loc></url>
-  <url><loc>https://www.cadmusapp.com/privacy.ko.html</loc></url>
-  <url><loc>https://www.cadmusapp.com/privacy.zh-Hans.html</loc></url>
-  <url><loc>https://www.cadmusapp.com/privacy.zh-Hant.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/ja/privacy.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/ko/privacy.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/zh-Hans/privacy.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/zh-Hant/privacy.html</loc></url>
   <url><loc>https://www.cadmusapp.com/terms.html</loc></url>
-  <url><loc>https://www.cadmusapp.com/terms.ja.html</loc></url>
-  <url><loc>https://www.cadmusapp.com/terms.ko.html</loc></url>
-  <url><loc>https://www.cadmusapp.com/terms.zh-Hans.html</loc></url>
-  <url><loc>https://www.cadmusapp.com/terms.zh-Hant.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/ja/terms.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/ko/terms.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/zh-Hans/terms.html</loc></url>
+  <url><loc>https://www.cadmusapp.com/zh-Hant/terms.html</loc></url>
 </urlset>
