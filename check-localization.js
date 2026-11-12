@@ -8,7 +8,7 @@ for (const language of languages) {
   for (const page of ['index', 'faq', 'support', 'contact']) {
     const file = path.join(root, language === 'en' ? '' : language, `${page}.html`);
     const html = fs.readFileSync(file, 'utf8');
-    const menu = html.match(/<details class="legal-language">[\s\S]*?<nav[^>]*>([\s\S]*?)<\/nav>/);
+    const menu = html.match(/<details class="legal-language"[^>]*>[\s\S]*?<nav[^>]*>([\s\S]*?)<\/nav>/);
     const options = menu ? [...menu[1].matchAll(/lang="([^"]+)"/g)].map(match => match[1]) : [];
     if (options.join(',') !== languages.join(',')) {
       console.error(`${file}: missing or incorrectly ordered language menu`);
