@@ -30,8 +30,35 @@ function loadAnalytics() {
 }
 
 let choice = localStorage.getItem(consentKey);
-if (choice === 'accepted' && tracksPage) loadAnalytics();
-if (!choice) banner.hidden = false;
+let analyticsLoaded = false;
+function startAnalytics() {
+  if (tracksPage && !analyticsLoaded) {
+    analyticsLoaded = true;
+    loadAnalytics();
+  }
+}
+async function initializeAnalytics() {
+  if (choice === 'declined') return;
+  if (choice === 'accepted') {
+    startAnalytics();
+    return;
+  }
+  try {
+    const response = await fetch(new URL('api/analytics-region', siteRoot), { cache: 'no-store' });
+    if (!response.ok) throw new Error('Region unavailable');
+    const region = await response.json();
+    if (typeof region.consentRequired !== 'boolean') throw new Error('Invalid region');
+    if (choice) return;
+    if (!region.consentRequired) {
+      startAnalytics();
+      return;
+    }
+  } catch (_) {
+    // Require consent when location cannot be determined.
+  }
+  if (!choice) banner.hidden = false;
+}
+initializeAnalytics();
 window.addEventListener('storage', (event) => {
   if (event.key === consentKey && event.newValue !== choice) location.reload();
 });
@@ -41,14 +68,14 @@ function openCookieSettings() {
 }
 openCookieSettings();
 window.addEventListener('hashchange', openCookieSettings);
-document.querySelector('a[href$="#cookie-settings"]').addEventListener('click', (event) => {
+document.querySelector('a[href$="#cookie-settings"]')?.addEventListener('click', (event) => {
   event.preventDefault();
   banner.hidden = false;
 });
 
 document.getElementById('consent-accept').addEventListener('click', () => {
   localStorage.setItem(consentKey, 'accepted');
-  if (choice !== 'accepted' && tracksPage) loadAnalytics();
+  startAnalytics();
   choice = 'accepted';
   banner.hidden = true;
 });
@@ -63,7 +90,7 @@ document.getElementById('consent-decline').addEventListener('click', () => {
       document.cookie = `${name}=; Max-Age=0; path=/; domain=.cadmusapp.com`;
     }
   });
-  if (choice === 'accepted') {
+  if (analyticsLoaded) {
     if (location.hash === '#cookie-settings') history.replaceState(null, '', location.pathname + location.search);
     location.reload();
   }
